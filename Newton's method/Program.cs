@@ -6,9 +6,19 @@ namespace Newton_s_method
     {
         static void Main(string[] args)
         {
-            Newton nt = new Newton(7, 3);
+            //Newton nt = new Newton(7, 3);
+            Newton nt;
 
-            Console.WriteLine(nt);
+            Console.WriteLine(@"Данное приложение извлекает корень n-степени методом Ньютона" +
+                "\nВведите число и степень корня: ");
+
+            double number = Convert.ToDouble(Console.ReadLine());
+            double power = Convert.ToDouble(Console.ReadLine());
+
+            nt = new Newton(number, power);
+
+            Console.WriteLine($"Результат методом Ньютона: {nt}");
+            Console.WriteLine("Результат методом Math.Pow: " + Math.Pow(number, 1.0/power));
             Console.ReadLine();
         }
     }
